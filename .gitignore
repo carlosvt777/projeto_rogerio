@@ -1,0 +1,32 @@
+# Dados brutos baixados do TSE: os dois zips oficiais em dados/ ficam versionados de propósito
+# (o download automático é bloqueado pelo firewall do TSE — ver README — então é mais prático
+# distribuir os zips pelo próprio repositório do que pedir pra cada pessoa baixar manualmente).
+# Qualquer OUTRO .zip (ex: extraído por engano fora de dados/) continua ignorado.
+*.zip
+!dados/*.zip
+files_cand/
+files_bem/
+
+# Datasets já filtrados/limpos pela Fase 0: ESSES SIM ficam versionados (são pequenos e
+# são a versão "congelada" que as fases seguintes e a turma toda devem usar)
+*.csv
+!dados/*.csv
+
+# Ambiente local (VS Code) — não versionar, cada um cria o seu com requirements.txt
+.venv/
+
+# Artefatos de execução do notebook
+*.pkl
+.ipynb_checkpoints/
+__pycache__/
+
+# Sistema
+.DS_Store
+
+# Notebooks antigos, não fazem parte do projeto de mineração eleitoral faseado
+# (ficam só localmente; se algum dia quiserem publicá-los, é em outro repositório)
+aula_aprendizagem_nao_supervisionada_kmeans.ipynb
+kmeans_90min_alunos.ipynb
+kmeans_90min_avaliacao.ipynb
+kmeans_90min_professor.ipynb
+kmeans_didatico_prefeitos.ipynb
